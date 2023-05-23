@@ -1,0 +1,44 @@
+
+.contenedor{
+    height: 450px;
+    width: 600px;
+    margin: auto;
+    padding: 5px;
+    background: #142b3b;
+}
+.contenDisplay{
+    width: 90%;
+    margin: auto;
+    
+}
+.display{
+    width: 100%;
+    height: 50px;
+    margin: 10px auto;
+    background:#142b3b;
+    border: 5px solid #b94866;
+    color: #fff;
+    font-size : 30px;
+}
+.contenNum{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+.botonNum{
+    background: #b94866;
+    color:#fff;
+    height: 80px;
+    width: 120px;
+}
+.ContentBotonCero{
+    width: 600px;
+    background: #811628;
+    color: #fff;
+}
+.botonOpe{
+    background: #bd3038;
+    color:#fff;
+    height: 80px;
+    width: 80px;
+}

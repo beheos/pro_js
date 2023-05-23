@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo List - Números Telefónicos</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .delete-button {
+        background-color: #ff0000;
+        color: #ffffff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .delete-all-button {
+        background-color: #ff0000;
+        color: #ffffff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .delete-all-button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Todo List - Números Telefónicos</h1>
+
+    <input type="text" id="phoneInput" placeholder="Ingrese un número telefónico" />
+    <button onclick="addPhone()">Agregar Número</button>
+
+    <table id="phoneList"></table>
+
+    <button onclick="deleteAllPhones()" id="deleteAllButton" disabled>Eliminar Todos</button>
+
+    <script>
+      function addPhone() {
+        var input = document.getElementById("phoneInput");
+        var phone = input.value;
+        input.value = "";
+
+        if (phone.trim() === "") {
+          alert("Por favor, ingrese un número telefónico.");
+          return;
+        }
+
+        var table = document.getElementById("phoneList");
+
+        var row = table.insertRow(-1);
+
+        var cell = row.insertCell(0);
+        cell.innerHTML = phone;
+
+        var deleteButton = document.createElement("button");
+        deleteButton.className = "delete-button";
+        deleteButton.innerHTML = "Eliminar";
+        deleteButton.onclick = function () {
+          var row = this.parentNode.parentNode;
+          row.parentNode.removeChild(row);
+          checkDeleteAllButton();
+        };
+
+        var deleteCell = row.insertCell(1);
+        deleteCell.appendChild(deleteButton);
+
+        checkDeleteAllButton();
+      }
+
+      function deleteAllPhones() {
+        var table = document.getElementById("phoneList");
+
+        while (table.rows.length > 0) {
+          table.deleteRow(0);
+        }
+
+        checkDeleteAllButton();
+      }
+
+      function checkDeleteAllButton() {
+        var table = document.getElementById("phoneList");
+        var deleteAllButton = document.getElementById("deleteAllButton");
+
+        if (table.rows.length === 0) {
+          deleteAllButton.disabled = true;
+        } else {
+          deleteAllButton.disabled = false;
+        }
+      }
+    </script>
+  </body>
+</html>

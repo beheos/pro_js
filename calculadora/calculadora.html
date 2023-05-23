@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calculadora.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="contenDisplay">
+            <input type="text" class="display" id="display" oninput="validateInput(this)">
+        </div>
+        <div class="contenNum">
+                <button class="botonNum" id="boton1" onclick="clickBoton('1')" >1</button>
+                <button class="botonNum" id="boton2" onclick="clickBoton('2')" >2</button>
+                <button class="botonNum" id="boton3" onclick="clickBoton('3')" >3</button>
+                <button class="botonNum" id="boton4" onclick="clickBoton('4')" >4</button>
+                <br>
+                <button class="botonNum" id="boton5" onclick="clickBoton('5')" >5</button>
+                <button class="botonNum" id="boton6" onclick="clickBoton('6')" >6</button>
+                <button class="botonNum" id="boton7" onclick="clickBoton('7')" >7</button>
+                <button class="botonNum" id="boton8" onclick="clickBoton('8')" >8</button>
+                <br>
+                <button class="botonNum" id="boton9" onclick="clickBoton('9')" >9</button>
+                <button class="botonNum" id="boton0" onclick="clickBoton('0')" >0</button>
+                <button class="botonNum" id="botonmas" onclick="operador('+')" >+</button>
+                <button class="botonNum" id="botonmenos" onclick="operador('-')">-</button>
+                <br>
+                <button class="botonNum" id="botonpor" onclick="operador('x')">x</button>
+                <button class="botonNum" id="botonentre" onclick="operador('÷')">/</button>
+                <button class="botonNum" id="botonigual" onclick="resultado('=')">=</button>
+                <button class="botonNum" id="botonpunto" onclick="borrar()">C</button>
+        </div>
+    </div>
+    <script src="calculadora.js"></script>
+</body>
+</html>

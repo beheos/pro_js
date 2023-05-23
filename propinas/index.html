@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calcular Propinas</h1>
+    <form>
+        <div>Monto a pagar: <input type="text" id="monto"></div>
+        <div id="divPropina">
+            <p>Selecciones el porcentaje de propina</p>
+            <ul>
+                <li><input type="radio" name="propina" id="10">10%</li>
+                <li><input type="radio" name="propina" id="15">15%</li>
+                <li><input type="radio" name="propina" id="20">20%</li>
+                <li><input type="radio" name="propina" id="otro">Otro %</li>
+                <input type="text" id="valOtro" placeholder="valor en porcentaje %">
+            </ul>
+            <input type="button" onclick="calcularPropina()" value="Calcular Propina">
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Total a pagar">
+            <input type="button" onclick="reiniciar()" value="Borrar todo">
+        </div>
+    </form>
+    <script src="code.js"></script>
+</body>
+</html>
